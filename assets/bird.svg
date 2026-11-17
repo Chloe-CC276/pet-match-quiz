@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="玄凤鹦鹉画像">
+<circle cx="120" cy="120" r="108" fill="#dce9e0"/><path d="M59 184c14-28 36-43 64-43 25 0 48 17 58 43v37H59z" fill="#c7b58d"/>
+<path d="M82 75 74 33l26 26 8-35 18 34 20-30-3 48" fill="#d8bd79" stroke="#9a855c" stroke-width="4" stroke-linejoin="round"/>
+<path d="M68 103c0-40 21-65 54-65s54 25 54 65v40c0 36-20 59-54 59s-54-23-54-59z" fill="#ead69d" stroke="#9a855c" stroke-width="5"/>
+<circle cx="90" cy="128" r="14" fill="#df967b"/><circle cx="154" cy="128" r="14" fill="#df967b"/><circle cx="98" cy="105" r="5" fill="#4c4d43"/><circle cx="146" cy="105" r="5" fill="#4c4d43"/>
+<path d="m111 126 11-8 11 8-11 11z" fill="#a87660" stroke="#80634e" stroke-width="2"/><path d="M85 169q37 18 74 0" stroke="#b9a476" stroke-width="4" fill="none"/>
+<path d="M50 212h140" stroke="#8b755c" stroke-width="7" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="兔子画像">
+<circle cx="120" cy="120" r="108" fill="#e7e7dc"/><path d="M83 104C69 74 65 18 82 17c21-1 32 52 31 82M157 104c14-30 18-86 1-87-21-1-32 52-31 82" fill="#e8d5bd" stroke="#9c856f" stroke-width="5"/>
+<path d="M90 80C80 52 79 31 83 28c7-3 16 38 16 52m51 0c10-28 11-49 7-52-7-3-16 38-16 52" fill="#d7a6a1"/>
+<path d="M61 112c7-31 27-49 59-49s52 18 59 49l4 38c0 34-25 56-63 56s-63-22-63-56z" fill="#f1dfc9" stroke="#9c856f" stroke-width="5"/>
+<circle cx="92" cy="132" r="6" fill="#514c45"/><circle cx="148" cy="132" r="6" fill="#514c45"/><ellipse cx="120" cy="156" rx="11" ry="8" fill="#c9918e"/>
+<path d="M120 164v9m0 0q-12 10-24 1m24-1q12 10 24 1" stroke="#77645a" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="70" cy="151" r="9" fill="#eab5a5" opacity=".7"/><circle cx="170" cy="151" r="9" fill="#eab5a5" opacity=".7"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="猫咪画像">
+<circle cx="120" cy="120" r="108" fill="#f2d9bd"/><path d="M35 178c20-22 48-31 85-31s65 9 85 31v43H35z" fill="#bf916d"/>
+<path d="M56 97 60 31l45 34M184 97l-4-66-45 34" fill="#a86f50" stroke="#835339" stroke-width="5" stroke-linejoin="round"/>
+<path d="M61 82c10-31 32-47 59-47s49 16 59 47c8 24 8 59-2 83-8 21-27 37-57 37s-49-16-57-37c-10-24-10-59-2-83z" fill="#c99973" stroke="#835339" stroke-width="5"/>
+<path d="m70 76 11-26 20 19M170 76l-11-26-20 19" fill="#e7ae9c"/><path d="M82 113q12-10 25 0M133 113q13-10 25 0" fill="none" stroke="#594c42" stroke-width="5" stroke-linecap="round"/>
+<path d="m112 137 8 5 8-5z" fill="#8d5b5c"/><path d="M120 143v10m0 0q-10 11-22 2m22-2q10 11 22 2" fill="none" stroke="#594c42" stroke-width="3" stroke-linecap="round"/>
+<path d="M66 145 33 136m34 19-34 2m141-12 33-9m-34 19 34 2" stroke="#835339" stroke-width="3" stroke-linecap="round"/><circle cx="79" cy="137" r="8" fill="#dda28b" opacity=".7"/><circle cx="161" cy="137" r="8" fill="#dda28b" opacity=".7"/>
+</svg>

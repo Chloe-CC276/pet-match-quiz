@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="豚鼠画像">
+<circle cx="120" cy="120" r="108" fill="#e1e8d6"/><ellipse cx="120" cy="142" rx="89" ry="70" fill="#ab785a" stroke="#76553f" stroke-width="5"/>
+<circle cx="65" cy="86" r="25" fill="#9f6b4f" stroke="#76553f" stroke-width="4"/><circle cx="175" cy="86" r="25" fill="#9f6b4f" stroke="#76553f" stroke-width="4"/>
+<circle cx="65" cy="86" r="13" fill="#e3ad99"/><circle cx="175" cy="86" r="13" fill="#e3ad99"/><path d="M75 78c12-13 27-22 45-22 18 0 33 9 45 22l11 71c-11 28-31 43-56 43s-45-15-56-43z" fill="#f2dec0"/>
+<path d="M85 70q35 11 70 0" fill="none" stroke="#a16e51" stroke-width="10" stroke-linecap="round"/><circle cx="88" cy="125" r="7" fill="#3e3f37"/><circle cx="152" cy="125" r="7" fill="#3e3f37"/>
+<ellipse cx="120" cy="154" rx="15" ry="11" fill="#dda591"/><path d="m114 155 6 5 6-5" stroke="#855f58" fill="none" stroke-width="3" stroke-linecap="round"/><path d="M120 162v8m0 0q-8 7-16 1m16-1q8 7 16 1" stroke="#855f58" fill="none" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

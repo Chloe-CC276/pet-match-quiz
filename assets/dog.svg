@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="小狗画像">
+<circle cx="120" cy="120" r="108" fill="#d8e7d9"/><path d="M35 186c16-24 46-39 85-39s69 15 85 39v35H35z" fill="#b78362"/>
+<path d="M72 77C49 55 25 62 30 101c4 28 16 45 36 39M168 77c23-22 47-15 42 24-4 28-16 45-36 39" fill="#895f47" stroke="#654838" stroke-width="5"/>
+<path d="M58 91c4-38 28-58 62-58s58 20 62 58l-5 61c-3 30-25 51-57 51s-54-21-57-51z" fill="#c9966f" stroke="#654838" stroke-width="5"/>
+<path d="M89 153c0-22 13-32 31-32s31 10 31 32c0 21-13 38-31 38s-31-17-31-38z" fill="#f6ddc4"/><ellipse cx="120" cy="142" rx="17" ry="12" fill="#4f453e"/>
+<path d="M120 154v12m0 0q-13 13-27 2m27-2q13 13 27 2" stroke="#58463c" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M77 112q11-10 23 0m40 0q12-10 23 0" stroke="#59483e" stroke-width="5" stroke-linecap="round" fill="none"/>
+<circle cx="75" cy="138" r="8" fill="#df9b87" opacity=".65"/><circle cx="165" cy="138" r="8" fill="#df9b87" opacity=".65"/><path d="M94 201h52l-7 20h-38z" fill="#e5a18a"/>
+</svg>
