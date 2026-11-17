@@ -1,1 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240"><circle cx="120" cy="120" r="108" fill="#dce8e5"/><path d="M66 151 31 135m37 28-34 7m38 6-25 23m127-48 35-16m-37 28 34 7m-38 6 25 23" stroke="#c98575" stroke-width="8" stroke-linecap="round"/><path d="M49 124c-17-7-27-21-19-39 17-2 29 7 35 23m126 16c17-7 27-21 19-39-17-2-29 7-35 23" fill="#e4a390" stroke="#b8776b" stroke-width="5"/><path d="M49 122 31 96m160 26 18-26" stroke="#c98575" stroke-width="9" stroke-linecap="round"/><path d="M49 142c8-24 33-39 71-39s63 15 71 39c7 23-10 51-38 60-18 6-48 6-66 0-28-9-45-37-38-60z" fill="#db9886" stroke="#a77167" stroke-width="5"/><path d="M96 105V78m48 27V78" stroke="#b8776b" stroke-width="8" stroke-linecap="round"/><circle cx="96" cy="73" r="9" fill="#e7aa98"/><circle cx="144" cy="73" r="9" fill="#e7aa98"/><circle cx="96" cy="73" r="3" fill="#3d4441"/><circle cx="144" cy="73" r="3" fill="#3d4441"/><path d="M104 166q16 13 32 0" fill="none" stroke="#9d6760" stroke-width="3" stroke-linecap="round"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="淡水蟹"><g stroke-linecap="round" stroke-linejoin="round"><ellipse cx="120" cy="220" rx="75" ry="9" fill="#d9d3c4" opacity=".52"/>
+  <path d="m77 175-28 27m41-23-12 32m85-32 13 32m-27-36 28 27" fill="none" stroke="#bf806e" stroke-width="8"/>
+  <ellipse cx="120" cy="150" rx="62" ry="45" fill="#d28e79" stroke="#594a43" stroke-width="3.5"/>
+  <path d="M85 124q35-15 70 0" fill="none" stroke="#eab5a0" stroke-width="8"/>
+  <path d="M95 115V82m50 33V82" stroke="#bf806e" stroke-width="9"/>
+  <circle cx="95" cy="78" r="8" fill="#d28e79" stroke="#594a43" stroke-width="2"/>
+  <circle cx="145" cy="78" r="8" fill="#d28e79" stroke="#594a43" stroke-width="2"/>
+  <circle cx="97" cy="76" r="2.5" fill="#594a43"/><circle cx="147" cy="76" r="2.5" fill="#594a43"/>
+  <path d="M62 144Q32 126 22 104m156 40q31-18 40-40" fill="none" stroke="#bf806e" stroke-width="11"/>
+  <path d="M24 101 16 69q27 1 32 24l-12 14zm192 0 8-32q-27 1-32 24l12 14z" fill="#d28e79" stroke="#594a43" stroke-width="3"/>
+</g></svg>

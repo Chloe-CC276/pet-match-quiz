@@ -1,7 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="兔子画像">
-<circle cx="120" cy="120" r="108" fill="#e7e7dc"/><path d="M83 104C69 74 65 18 82 17c21-1 32 52 31 82M157 104c14-30 18-86 1-87-21-1-32 52-31 82" fill="#e8d5bd" stroke="#9c856f" stroke-width="5"/>
-<path d="M90 80C80 52 79 31 83 28c7-3 16 38 16 52m51 0c10-28 11-49 7-52-7-3-16 38-16 52" fill="#d7a6a1"/>
-<path d="M61 112c7-31 27-49 59-49s52 18 59 49l4 38c0 34-25 56-63 56s-63-22-63-56z" fill="#f1dfc9" stroke="#9c856f" stroke-width="5"/>
-<circle cx="92" cy="132" r="6" fill="#514c45"/><circle cx="148" cy="132" r="6" fill="#514c45"/><ellipse cx="120" cy="156" rx="11" ry="8" fill="#c9918e"/>
-<path d="M120 164v9m0 0q-12 10-24 1m24-1q12 10 24 1" stroke="#77645a" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="70" cy="151" r="9" fill="#eab5a5" opacity=".7"/><circle cx="170" cy="151" r="9" fill="#eab5a5" opacity=".7"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="兔子"><g stroke-linecap="round" stroke-linejoin="round"><ellipse cx="120" cy="220" rx="75" ry="9" fill="#d9d3c4" opacity=".52"/>
+  <circle cx="70" cy="168" r="19" fill="#f2dfc9" stroke="#594a43" stroke-width="2.5"/>
+  <ellipse cx="119" cy="159" rx="53" ry="55" fill="#c9a789" stroke="#594a43" stroke-width="3"/>
+  <ellipse cx="125" cy="169" rx="28" ry="39" fill="#f2e3d1"/>
+  <ellipse cx="93" cy="206" rx="21" ry="10" fill="#c9a789" stroke="#594a43" stroke-width="2.5"/>
+  <ellipse cx="145" cy="206" rx="21" ry="10" fill="#c9a789" stroke="#594a43" stroke-width="2.5"/>
+  <path d="M95 66Q78 3 96 15q15 6 17 50m26 0q13-60 29-51 14 18-15 66" fill="#c9a789" stroke="#594a43" stroke-width="3"/>
+  <path d="M100 57Q91 24 98 24q7 3 9 32m35 4q11-35 19-35 5 4-12 42" fill="#dfaeb0"/>
+  <ellipse cx="126" cy="106" rx="44" ry="42" fill="#c9a789" stroke="#594a43" stroke-width="3"/>
+  
+  <circle cx="109" cy="103" r="3.6" fill="#594a43"/><circle cx="144" cy="103" r="3.6" fill="#594a43"/><circle cx="108" cy="102" r="1.1" fill="#fff"/><circle cx="143" cy="102" r="1.1" fill="#fff"/>
+  <ellipse cx="126" cy="123" rx="21" ry="13" fill="#f5e8d8"/>
+  <path d="m120 118 6 4 6-4z" fill="#ab7b7c"/><path d="M126 122v5m0 0q-5 4-10 0m10 0q5 4 10 0" fill="none" stroke="#594a43" stroke-width="1.8"/>
+</g></svg>

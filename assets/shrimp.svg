@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240"><circle cx="120" cy="120" r="108" fill="#dce9e6"/><path d="M55 151c-6-36 18-63 52-68 32-5 61 10 69 39 6 22-3 44-22 57-18 12-42 14-63 3" fill="none" stroke="#dc9689" stroke-width="29" stroke-linecap="round"/><path d="M64 165c-12 10-25 12-34 5m25-18-24-7m125 34 16 24m-35-18 7 25m-33-25-2 25" fill="none" stroke="#c87e75" stroke-width="6" stroke-linecap="round"/><path d="M119 78c18-27 38-28 58-10M110 80c4-34 21-45 47-40" fill="none" stroke="#c87e75" stroke-width="3" stroke-linecap="round"/><circle cx="136" cy="97" r="6" fill="#534745"/><path d="M89 91q15 27 3 54m36-61q14 24 4 56m29-36q8 21-3 41" fill="none" stroke="#b9756f" stroke-width="3"/><path d="m47 166-20 20m22-12-8 28" stroke="#c87e75" stroke-width="5" stroke-linecap="round"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="观赏虾"><g stroke-linecap="round" stroke-linejoin="round"><ellipse cx="120" cy="220" rx="75" ry="9" fill="#d9d3c4" opacity=".52"/>
+  <path d="M65 103q54-24 109 11-3 61-52 84-39 10-60-24" fill="#d79b83" stroke="#594a43" stroke-width="3"/>
+  <path d="M96 96q27 42 6 89m24-81q22 39 8 78m21-69q16 29 3 54" fill="none" stroke="#b9776e" stroke-width="3"/>
+  <path d="m65 103-24 12 20 15-21 13 22 14-11 17 25 2" fill="#e4b39a" stroke="#594a43" stroke-width="2.5"/>
+  <path d="m122 193-14 21m32-29-5 29m21-43 7 35m8-52 15 31" fill="none" stroke="#b9776e" stroke-width="3"/>
+  <circle cx="164" cy="119" r="4" fill="#594a43"/>
+  <path d="M175 113q30-45 45-44m-43 48q37-30 50-24" fill="none" stroke="#b9776e" stroke-width="2"/>
+  <path d="m51 169-17 9m20-3-17 16" stroke="#b9776e" stroke-width="5"/>
+</g></svg>

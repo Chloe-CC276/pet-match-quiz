@@ -1,1 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240"><circle cx="120" cy="120" r="108" fill="#e1e9e3"/><path d="M43 184c12-34 42-57 77-57s65 23 77 57v37H43z" fill="#a7b2b0"/><circle cx="62" cy="86" r="32" fill="#aab4b2" stroke="#748381" stroke-width="4"/><circle cx="178" cy="86" r="32" fill="#aab4b2" stroke="#748381" stroke-width="4"/><circle cx="62" cy="86" r="19" fill="#d6a7a4"/><circle cx="178" cy="86" r="19" fill="#d6a7a4"/><path d="M50 108c5-37 30-61 70-61s65 24 70 61l-7 53c-7 33-29 50-63 50s-56-17-63-50z" fill="#bac6c3" stroke="#748381" stroke-width="5"/><path d="M80 154q40 21 80 0" fill="none" stroke="#e4e7dc" stroke-width="30" stroke-linecap="round"/><circle cx="89" cy="129" r="6" fill="#394641"/><circle cx="151" cy="129" r="6" fill="#394641"/><path d="m111 157 9 7 9-7z" fill="#b77e80"/><path d="M120 164v8m0 0q-9 7-18 1m18-1q9 7 18 1" fill="none" stroke="#62716b" stroke-width="3"/><path d="M71 166 41 155m31 20-30 3m127-12 30-11m-31 20 30 3" stroke="#7e8e88" stroke-width="3" stroke-linecap="round"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="龙猫"><g stroke-linecap="round" stroke-linejoin="round"><ellipse cx="120" cy="220" rx="75" ry="9" fill="#d9d3c4" opacity=".52"/>
+  <path d="M60 164q-37-10-41 17" fill="none" stroke="#a6a4a4" stroke-width="19"/>
+  <ellipse cx="113" cy="155" rx="62" ry="55" fill="#a9aca8" stroke="#594a43" stroke-width="3"/>
+  <ellipse cx="120" cy="170" rx="33" ry="32" fill="#ece9df"/>
+  <ellipse cx="86" cy="86" rx="25" ry="32" fill="#a9aca8" stroke="#594a43" stroke-width="3"/>
+  <ellipse cx="86" cy="86" rx="15" ry="21" fill="#d4aaa5"/>
+  <ellipse cx="162" cy="86" rx="25" ry="32" fill="#a9aca8" stroke="#594a43" stroke-width="3"/>
+  <ellipse cx="162" cy="86" rx="15" ry="21" fill="#d4aaa5"/>
+  <ellipse cx="123" cy="119" rx="55" ry="43" fill="#a9aca8" stroke="#594a43" stroke-width="3"/>
+  <ellipse cx="126" cy="141" rx="29" ry="17" fill="#ece9df"/>
+  <circle cx="104" cy="119" r="3.5" fill="#594a43"/><circle cx="146" cy="119" r="3.5" fill="#594a43"/><circle cx="103" cy="118" r="1.1" fill="#fff"/><circle cx="145" cy="118" r="1.1" fill="#fff"/>
+  <path d="m120 137 6 5 6-5z" fill="#ab8281"/>
+  <path d="m96 146-21-4m22 9-20 3m78-8 21-4m-21 9 20 3" stroke="#74645a" stroke-width="1.7"/>
+  <ellipse cx="88" cy="207" rx="18" ry="9" fill="#a9aca8" stroke="#594a43" stroke-width="2"/>
+  <ellipse cx="152" cy="207" rx="18" ry="9" fill="#a9aca8" stroke="#594a43" stroke-width="2"/>
+</g></svg>
