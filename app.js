@@ -160,7 +160,7 @@ function scoreItem(q, pet) {
   return null;
 }
 
-const criticalLabels = { Q1:"每天可投入的照护时间", Q3:"每日活动时间", Q7:"安全活动空间", Q11:"环境与设备维护", Q22:"稳定的日常预算", Q23:"突发医疗准备", Q24:"合适的就医渠道", Q27:"毛发或羽粉", Q28:"声音", Q29:"清洁与气味", Q30:"抓咬与物品防护", Q31:"长期照护" };
+const criticalLabels = { Q1:"每天可投入的照护时间", Q3:"每日活动时间", Q6:"日常清洁频率", Q7:"安全活动空间", Q11:"环境与设备维护", Q22:"稳定的日常预算", Q23:"突发医疗准备", Q24:"合适的就医渠道", Q27:"毛发或羽粉", Q28:"声音", Q29:"清洁与气味", Q30:"抓咬与物品防护", Q31:"长期照护" };
 function evaluate(pet) {
   const breakdown = Object.fromEntries(dimensions.map(d => [d.id, { score:0, answered:0, max:d.max }]));
   const gaps = [];
@@ -179,12 +179,14 @@ function evaluate(pet) {
   for (const id of ["Q1","Q3","Q7","Q11","Q22","Q23","Q24"]) {
     if (answers[id] !== undefined && answers[id] !== "unknown" && Number(answers[id]) <= pet.need[id] - 2) hard.push(criticalLabels[id]);
   }
+  if (answers.Q6 !== undefined && answers.Q6 !== "unknown" && 3 - Number(answers.Q6) <= pet.need.Q6 - 2) hard.push(criticalLabels.Q6);
   for (const id of ["Q27","Q28","Q29","Q30"]) {
     if (answers[id] === "0" && pet.need[id] >= 2) hard.push(criticalLabels[id]);
   }
   if (answers.Q31 === "0") hard.push(criticalLabels.Q31);
+  const unresolved = ["Q1","Q3","Q6","Q7","Q11","Q22","Q23","Q24"].filter(id => answers[id] === "unknown").map(id => criticalLabels[id]);
   const score = answeredWeight ? Math.round(total / answeredWeight * 100) : 0;
-  return { pet, score, breakdown, hard:[...new Set(hard)], gaps:[...new Set(gaps)], answeredWeight, eligible:hard.length === 0 };
+  return { pet, score, breakdown, hard:[...new Set(hard)], gaps:[...new Set(gaps)], unresolved, answeredWeight, eligible:hard.length === 0 };
 }
 
 function gateIssues() {
@@ -202,7 +204,7 @@ function pendingIssues() {
   if (answers.G3 === "1" || answers.G3 === "3" || answers.G3 === "unknown") issues.push("明确家人的健康与过敏限制");
   if (answers.G4 !== "0") issues.push("核实当地规定和合规来源");
   if (answers.G5 === "1" || answers.G5 === "2" || answers.G5 === "unknown") issues.push("安排外出或搬家时的备用照护人");
-  if (questions.filter(q => q.weight && answers[q.id] === "unknown").length > 0) issues.push("补充暂不确定的题目，提高结果可信度");
+  if (questions.some(q => q.weight && (answers[q.id] === "unknown" || (Array.isArray(answers[q.id]) && answers[q.id].includes("unknown"))))) issues.push("补充暂不确定的题目，提高结果可信度");
   return [...new Set(issues)];
 }
 function preferred(pet) {
@@ -210,13 +212,13 @@ function preferred(pet) {
   if (!Array.isArray(answer)) return false;
   return (pet.kind === "猫" && answer.includes("0")) || (pet.kind === "狗" && answer.includes("1")) || (pet.kind === "鸟类" && answer.includes("2")) || (pet.kind === "小型哺乳动物" && answer.includes("3")) || (pet.kind === "爬行类" && answer.includes("4")) || (pet.kind === "水族" && answer.includes("5"));
 }
-function tier(score, coverage) { if (coverage < 85) return "初步匹配"; return score >= 85 ? "高度匹配" : score >= 75 ? "较为匹配" : score >= 65 ? "有条件匹配" : "值得了解"; }
+function tier(score, coverage, unresolved) { if (unresolved.length) return "待确认"; if (coverage < 85) return "初步匹配"; return score >= 85 ? "高度匹配" : score >= 75 ? "较为匹配" : score >= 65 ? "有条件匹配" : "值得了解"; }
 function allResults() {
   return pets.map(evaluate).sort((a,b) => (b.score + (preferred(b.pet) ? 3 : 0)) - (a.score + (preferred(a.pet) ? 3 : 0)));
 }
 function renderDetails(item) {
   const dims = dimensions.map(d => ({ ...d, ...item.breakdown[d.id], ratio:item.breakdown[d.id].answered ? item.breakdown[d.id].score / item.breakdown[d.id].answered : 0 })).sort((a,b) => b.ratio - a.ratio);
-  return `<div class="detail-panel" id="detailPanel"><div><span class="eyebrow">关于 ${item.pet.name}</span><h3>适合之处与准备事项</h3><p>你的「${dims[0].name}」和「${dims[1].name}」比较契合。${item.pet.description}</p><ul><li>${item.pet.note}</li>${item.gaps.length ? `<li>需要再想想：${item.gaps.slice(0,2).join("、")}。</li>` : ""}<li>建议了解具体个体的健康状况与相处习惯。</li></ul></div><div><h3>六个维度的匹配</h3><div class="breakdown">${dimensions.map(d => { const v = item.breakdown[d.id]; return `<div class="breakdown-row"><span>${d.name}</span><div class="mini-track"><span style="width:${v.answered ? Math.round(v.score / v.answered * 100) : 0}%"></span></div><strong>${v.answered ? `${Math.round(v.score)}/${v.answered}` : "待答"}</strong></div>`; }).join("")}</div></div></div>`;
+  return `<div class="detail-panel" id="detailPanel"><div><span class="eyebrow">关于 ${item.pet.name}</span><h3>适合之处与准备事项</h3><p>你的「${dims[0].name}」和「${dims[1].name}」比较契合。${item.pet.description}</p><ul><li>${item.pet.note}</li>${item.unresolved.length ? `<li>仍需确认：${item.unresolved.slice(0,2).join("、")}。</li>` : ""}${item.gaps.length ? `<li>需要再想想：${item.gaps.slice(0,2).join("、")}。</li>` : ""}<li>建议了解具体个体的健康状况与相处习惯。</li></ul></div><div><h3>六个维度的匹配</h3><div class="breakdown">${dimensions.map(d => { const v = item.breakdown[d.id]; return `<div class="breakdown-row"><span>${d.name}</span><div class="mini-track"><span style="width:${v.answered ? Math.round(v.score / v.answered * 100) : 0}%"></span></div><strong>${v.answered ? `${Math.round(v.score)}/${v.answered}` : "待答"}</strong></div>`; }).join("")}</div></div></div>`;
 }
 function renderResults() {
   const blocked = gateIssues();
@@ -227,7 +229,7 @@ function renderResults() {
   const primary = ready.slice(0,3);
   const backup = eligible.filter(item => !primary.includes(item)).slice(0,2);
   const chosen = selectedPet ? results.find(item => item.pet.id === selectedPet) : primary[0];
-  app.innerHTML = `<div class="result-page"><div class="result-header"><div class="result-wrap result-headline"><div><span class="eyebrow">你的寻伴结果</span><h1>${blocked.length ? "先给未来的相遇留个位置" : primary.length ? "这些小伙伴，和你比较合拍" : "再准备一点，会遇见更合拍的伙伴"}</h1><p>${blocked.length ? "现在有几件需要优先解决的事。等条件明确，再来看看适合谁走进你的生活。" : primary.length ? `从37道回答里，我们找到了目前较合适的方向。${pending.length ? "还有几件事值得在决定前确认。" : "先认识具体个体，再做最后决定。"}` : "目前还没有达到推荐条件的宠物。看看差距在哪里，准备好后可以重新测一次。"}</p></div><div class="result-portraits"><img src="./assets/cat.svg" alt="猫咪" /><img src="./assets/dog.svg" alt="小狗" /><img src="./assets/bird.svg" alt="小鸟" /></div></div></div><div class="result-body">${blocked.length ? `<div class="empty-state"><h2>先处理这几件事</h2><ul>${blocked.map(x => `<li>${x}</li>`).join("")}</ul><p>这些条件会直接影响宠物的生活与照护，所以暂时不生成推荐榜单。</p></div>` : `${pending.length ? `<div class="result-alert"><strong>决定前再确认</strong>${pending.slice(0,3).join("；")}。</div>` : ""}${primary.length ? `<h2 class="section-heading">你的优先了解清单</h2><div class="recommend-grid">${primary.map((item,i) => `<article class="recommend-card${i === 0 ? " primary-card" : ""}"><div class="card-top"><img src="./assets/${item.pet.image}" alt="${item.pet.name}画像" /><span class="score-pill">${item.score} 分 · ${tier(item.score, item.answeredWeight)}</span></div><h3>${item.pet.name}</h3><span class="animal-kind">${item.pet.kind}${preferred(item.pet) ? " · 你偏爱的品类" : ""}</span><p>${item.pet.description}</p><div class="card-reason"><strong>先留意</strong>${item.pet.note}</div><div class="card-actions"><button class="text-button" type="button" data-pet="${item.pet.id}">查看匹配详情</button></div></article>`).join("")}</div>${chosen && primary.some(x => x.pet.id === chosen.pet.id) ? renderDetails(chosen) : renderDetails(primary[0])}` : `<div class="empty-state"><h2>目前暂无稳妥推荐</h2><p>${results[0]?.answeredWeight < 70 ? "暂不确定的答案较多，请返回补充几个关键条件。" : "你可以先从时间、空间、预算或就医准备中选择一项调整，再重新比较。"}${results[0]?.hard.length ? `最接近的候选仍需解决：${results[0].hard.slice(0,2).join("、")}。` : ""}</p></div>`}${backup.length && primary.length ? `<div class="secondary-results"><h2 class="section-heading">还可以了解</h2><div class="backup-list">${backup.map(x => `<span class="backup"><strong>${x.pet.name}</strong> · ${x.score}分${x.score < 65 ? " · 需调整条件" : ""}</span>`).join("")}</div></div>` : ""}`}<div class="result-footer"><button class="button secondary" type="button" data-action="edit">返回修改答案</button><button class="button primary" type="button" data-action="restart">重新测一次</button></div></div></div>`;
+  app.innerHTML = `<div class="result-page"><div class="result-header"><div class="result-wrap result-headline"><div><span class="eyebrow">你的寻伴结果</span><h1>${blocked.length ? "先给未来的相遇留个位置" : primary.length ? "这些小伙伴，和你比较合拍" : "再准备一点，会遇见更合拍的伙伴"}</h1><p>${blocked.length ? "现在有几件需要优先解决的事。等条件明确，再来看看适合谁走进你的生活。" : primary.length ? `从37道回答里，我们找到了目前较合适的方向。${pending.length ? "还有几件事值得在决定前确认。" : "先认识具体个体，再做最后决定。"}` : "目前还没有达到推荐条件的宠物。看看差距在哪里，准备好后可以重新测一次。"}</p></div><div class="result-portraits"><img src="./assets/cat.svg" alt="猫咪" /><img src="./assets/dog.svg" alt="小狗" /><img src="./assets/bird.svg" alt="小鸟" /></div></div></div><div class="result-body">${blocked.length ? `<div class="empty-state"><h2>先处理这几件事</h2><ul>${blocked.map(x => `<li>${x}</li>`).join("")}</ul><p>这些条件会直接影响宠物的生活与照护，所以暂时不生成推荐榜单。</p></div>` : `${pending.length ? `<div class="result-alert"><strong>决定前再确认</strong>${pending.slice(0,3).join("；")}。</div>` : ""}${primary.length ? `<h2 class="section-heading">你的优先了解清单</h2><div class="recommend-grid">${primary.map((item,i) => `<article class="recommend-card${i === 0 ? " primary-card" : ""}"><div class="card-top"><img src="./assets/${item.pet.image}" alt="${item.pet.name}画像" /><span class="score-pill">${item.score} 分 · ${tier(item.score, item.answeredWeight, item.unresolved)}</span></div><h3>${item.pet.name}</h3><span class="animal-kind">${item.pet.kind}${preferred(item.pet) ? " · 你偏爱的品类" : ""}</span><p>${item.pet.description}</p><div class="card-reason"><strong>先留意</strong>${item.pet.note}</div><div class="card-actions"><button class="text-button" type="button" data-pet="${item.pet.id}">查看匹配详情</button></div></article>`).join("")}</div>${chosen && primary.some(x => x.pet.id === chosen.pet.id) ? renderDetails(chosen) : renderDetails(primary[0])}` : `<div class="empty-state"><h2>目前暂无稳妥推荐</h2><p>${results[0]?.answeredWeight < 70 ? "暂不确定的答案较多，请返回补充几个关键条件。" : "你可以先从时间、空间、预算或就医准备中选择一项调整，再重新比较。"}${results[0]?.hard.length ? `最接近的候选仍需解决：${results[0].hard.slice(0,2).join("、")}。` : ""}</p></div>`}${backup.length && primary.length ? `<div class="secondary-results"><h2 class="section-heading">还可以了解</h2><div class="backup-list">${backup.map(x => `<span class="backup"><strong>${x.pet.name}</strong> · ${x.score}分${x.score < 65 ? " · 需调整条件" : ""}</span>`).join("")}</div></div>` : ""}`}<div class="result-footer"><button class="button secondary" type="button" data-action="edit">返回修改答案</button><button class="button primary" type="button" data-action="restart">重新测一次</button></div></div></div>`;
 }
 
 app.addEventListener("change", e => { if (e.target.matches("input[name]")) handleAnswer(e.target); });
